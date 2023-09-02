@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import './SearchBar.css';
 function SearchBar({ onSubmit }){
     const [term, setTerm] = useState('');
     const handleFormSubmit = (event) => {
@@ -13,9 +13,10 @@ function SearchBar({ onSubmit }){
         setTerm(event.target.value);
     }
     return( 
-        <div>
+        <div className='search-bar'>
             <form onSubmit={ handleFormSubmit }>
-                <input value = { term } onChange={ handleEventChange } />
+                <label>Enter Search Term</label>
+                <input value = { term } onChange={ handleEventChange } placeholder='Enter here...' />
             </form>
         </div>
     );
